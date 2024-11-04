@@ -19,7 +19,6 @@ export class AuthController {
     }
   }
 
-
   @Post('login')
   async login(
     @Body('email') email: string,

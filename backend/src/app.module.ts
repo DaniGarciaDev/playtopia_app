@@ -9,7 +9,7 @@ import { User } from './entities/user.entity';
     TypeOrmModule.forRoot({
       type: 'mysql',
       host: 'localhost',
-      port: 3307,                     
+      port: 3306,                     
       username: 'admin',    
       password: 'admin', 
       database: 'playtopia_db',        
