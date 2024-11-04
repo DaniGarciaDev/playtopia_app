@@ -1,0 +1,22 @@
+<h2>Crear Cuenta</h2>
+
+<!-- <div *ngIf="errorMessage" class="error-message">
+  {{ errorMessage }}
+</div> -->
+
+<div class="form-group">
+  <label for="name">Nombre</label>
+  <input type="text" id="name" [(ngModel)]="name" placeholder="Tu nombre" />
+</div>
+
+<div class="form-group">
+  <label for="email">Email</label>
+  <input type="email" id="email" [(ngModel)]="email" placeholder="Tu email" />
+</div>
+
+<div class="form-group">
+  <label for="password">Contraseña</label>
+  <input type="password" id="password" [(ngModel)]="password" placeholder="Tu contraseña" />
+</div>
+
+<button (click)="register()">Crear Cuenta</button>

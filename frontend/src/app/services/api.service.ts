@@ -5,13 +5,20 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class ApiService {
+export class AuthService {
+  private apiUrl = 'http://localhost:3000/auth';
 
-  private baseUrl = 'http://localhost:3000/check-db'; // URL de tu backend
+  constructor(private http: HttpClient) {}
 
-  constructor(private http: HttpClient) { }
+  register(name: string, email: string, password: string): Observable<any> {
+    return this.http.post(`${this.apiUrl}/register`, { name, email, password });
+  }
+
+  login(email: string, password: string): Observable<any> {
+    return this.http.post(`${this.apiUrl}/login`, { email, password });
+  }
 
   checkDatabaseConnection(): Observable<any> {
-    return this.http.get(this.baseUrl);
+    return this.http.get(`${this.apiUrl}/check-db`);
   }
 }
